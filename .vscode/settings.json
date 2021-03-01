@@ -1,0 +1,9 @@
+{
+    "rest-client.environmentVariables": {
+        "$shared": {
+            "host": "http://localhost:5000",
+            "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwM2NiNTFkYzJjODkzM2U5NDJiOTNjOCIsInVzZXJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6IjMyMWYzOWQ2YTY5YWQ2ODUzNDQxN2Q0MjA1YjdmNTJjIiwibmFtZSI6InN1cHBlciBhZG1pbiIsImNyZWF0ZWRBdCI6IjIwMjEtMDMtMDFUMDk6MzQ6MjEuMzA5WiIsInVwZGF0ZWRBdCI6IjIwMjEtMDMtMDFUMDk6MzQ6MjEuMzA5WiIsIl9fdiI6MH0sImlhdCI6MTYxNDU5Mjc1NCwiZXhwIjoxNjE4MTkyNzU0fQ.o2H68-lLLEJQActpkMNP-B-gq2Z6tdCUe8aQwyI08yY",
+            "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwM2EzNzg5NjEyMTMwMGFmMGQxZTUxMSIsInVzZXJuYW1lIjoiYWRtaW4iLCJuYW1lIjoic3VwcGVyIGFkbWluIn0sImlhdCI6MTYxNDQyODA0MX0.oLirvX-IS1Hc6mu0jEbY2fM_3w8matWQ3rO1MwNaQF0"
+        }
+    }
+}
