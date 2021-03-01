@@ -1,1 +1,1 @@
-Nodejs Project template
+Nodejs Typescript Project template
