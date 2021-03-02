@@ -36,16 +36,16 @@ export const TokenSchema = new Schema<IToken>({
 
 TokenSchema.statics.createToken = async function (user: any) {
 
-    let expiredAt = new Date()
+    const expiredAt = new Date()
 
 
     expiredAt.setMilliseconds(expiredAt.getMilliseconds() + parseInt(TOKEN_EXPIRED))
 
     // let accessToken = generateAccessToken({ _id, email, rule: [], expired_at: expired_at.getTime(), expired_in: parseInt(this.expiresIn) })
-    let accessToken = generateAccessToken({ user });
-    let refreshToken = jwt.sign({ user }, REFRESH_TOKEN_SECRET);
+    const accessToken = generateAccessToken({ user });
+    const refreshToken = jwt.sign({ user }, REFRESH_TOKEN_SECRET);
 
-    let result = new this({
+    const result = new this({
         accessToken,
         refreshToken,
         user: user._id,
@@ -53,7 +53,7 @@ TokenSchema.statics.createToken = async function (user: any) {
         expiredIn: parseInt(TOKEN_EXPIRED)
     })
 
-    let token = await result.save();
+    const token = await result.save();
 
     return token;
 }

@@ -31,7 +31,7 @@ mongoose.connect(database.mongo.url, database.mongo.options)
 
 
 // Setup express
-let app = express()
+const app = express()
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug');
 

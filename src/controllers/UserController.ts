@@ -1,5 +1,5 @@
-import Token from "../models/Token";
-import User from "../models/User";
+import Token from "models/Token";
+import User from "models/User";
 import md5 from 'md5'
 import { NextFunction, Request, Response } from "express";
 
@@ -9,8 +9,8 @@ interface IUserRequest extends Request {
 
 export default {
     login: async (req: Request, res: Response, next: NextFunction) => {
-        let { username, password } = req.body
-        let user = await User.findOne({ username, password: md5(<string>password) })
+        const { username, password } = req.body
+        const user = await User.findOne({ username, password: md5(<string>password) })
         if (user) {
             return res.json({
                 username,
@@ -23,8 +23,8 @@ export default {
         })
     },
     register: async (req: Request, res: Response, next: NextFunction) => {
-        let { username, password } = req.body
-        let user = await User.findOne({ username })
+        const { username, password } = req.body
+        const user = await User.findOne({ username })
 
         if (user) {
             return res.status(500).json({
@@ -32,10 +32,10 @@ export default {
             })
         }
 
-        let register = new User({ ...req.body, username, password: md5(password) })
+        const register = new User({ ...req.body, username, password: md5(password) })
         return register.save()
             .then(async (result) => {
-                let user = JSON.parse(JSON.stringify(result))
+                const user = JSON.parse(JSON.stringify(result))
 
                 delete user.password
                 delete user.id
@@ -68,7 +68,7 @@ export default {
         }
 
 
-        let token = await Token.findOne({ refreshToken })
+        const token = await Token.findOne({ refreshToken })
 
 
         if (!token) {
@@ -85,8 +85,8 @@ export default {
 
     },
     updateInfo: async (req: IUserRequest, res: Response, next: NextFunction) => {
-        let { name } = req.body
-        let { user } = req
+        const { name } = req.body
+        const { user } = req
         User.findOneAndUpdate({ _id: user._id }, { $set: { name } }, { runValidators: true, new: true })
             .then(result => res.json(result))
             .catch(error => res.status(500).json({ message: error.message, error }))

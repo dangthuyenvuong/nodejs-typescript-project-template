@@ -9,11 +9,11 @@ export default class AbstractRestController {
 
     }
     getOne = (req: Request, res: Response, next: NextFunction) => {
-        let { _id } = req.params
-        let { select } = req.query;
+        const { _id } = req.params
+        const { select } = req.query;
 
 
-        let exec = this.model.findOne({ _id })
+        const exec = this.model.findOne({ _id })
 
         if (select) {
             exec.select(select.toString().replace(/,/g, ' '))
@@ -35,7 +35,7 @@ export default class AbstractRestController {
     get = (req: Request, res: Response, next: NextFunction) => {
         let { sort = { _id: 'desc' }, limit = <any>'15', page = <any>'1', select } = req.query;
 
-        let exec = this.model.find()
+        const exec = this.model.find()
 
         if (select) {
             exec.select(select.toString().replace(/,/g, ' '))
@@ -50,7 +50,7 @@ export default class AbstractRestController {
 
         exec.limit(limit)
 
-        let paginate = {
+        const paginate = {
             currentPage: page,
             perPage: limit,
 
@@ -88,7 +88,7 @@ export default class AbstractRestController {
             }))
     }
     put = (req: Request, res: Response, next: NextFunction) => {
-        let { _id } = req.params
+        const { _id } = req.params
 
         this.model.updateOne({ _id }, {
             $set: objExclude(req.body, { createdAt: 1, updatedAt: 1 })
@@ -105,7 +105,7 @@ export default class AbstractRestController {
             })
     }
     delete = (req: Request, res: Response, next: NextFunction) => {
-        let { _id } = req.params
+        const { _id } = req.params
         this.model.deleteOne({ _id })
             .then((result) => {
                 res.status(200).json({

@@ -4,7 +4,7 @@ export interface IToken extends Document {
     accessToken: string,
     refreshToken: string,
     user: Types.ObjectId,
-    expiredIn: Number,
+    expiredIn: number,
     tokenType: string,
     expiredAt: string,
 }

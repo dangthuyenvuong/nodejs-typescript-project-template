@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import jwt from "jsonwebtoken";
-import User from '../models/User'
+import User from 'models/User'
 
 const { JsonWebTokenError, TokenExpiredError } = jwt
 
@@ -30,7 +30,7 @@ export default function JWTMiddleware(req: any, res: Response, next: NextFunctio
 
     jwt.verify(token, ACCESS_TOKEN_SECRET, async (err: any, result: any) => {
         if (err) return jwtCacheError(err, res)
-        let user = await User.findOne({ _id: result.user._id });
+        const user = await User.findOne({ _id: result.user._id });
 
         if (user) {
             req.user = user;

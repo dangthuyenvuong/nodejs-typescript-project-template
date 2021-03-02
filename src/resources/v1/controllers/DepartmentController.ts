@@ -1,6 +1,6 @@
-import Department from '../../../models/Department';
+import Department from 'models/Department';
 
-import AbstractRestController from "../../../vendor/AbstractRestController";
+import AbstractRestController from "vendor/AbstractRestController";
 
 
 class Controller extends AbstractRestController {

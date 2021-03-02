@@ -1,6 +1,6 @@
 import express from 'express'
-import controller from '../controllers/UserController'
-import JWTMiddleware from '../middleware/JWTMiddleware'
+import controller from 'controllers/UserController'
+import JWTMiddleware from 'middleware/JWTMiddleware'
 
 const router = express.Router()
 

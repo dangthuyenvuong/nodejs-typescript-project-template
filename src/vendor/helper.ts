@@ -1,5 +1,5 @@
 export function objExclude(obj: Object | any, field: any = {}) {
-    for (let i in obj) {
+    for (const i in obj) {
         if (i in field) {
             delete obj[i]
         }
