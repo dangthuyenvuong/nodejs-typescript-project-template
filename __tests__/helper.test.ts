@@ -1,4 +1,4 @@
-import { objExclude } from '../src/core/helper'
+import { objExclude } from '../src/vendor/helper'
 
 test('Helper function', async () => {
     let obj = objExclude({

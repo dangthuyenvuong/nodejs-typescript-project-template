@@ -1,6 +1,6 @@
 import express, { NextFunction, Request, Response } from 'express'
 import mongoose from 'mongoose'
-import logging from './core/logging'
+import logging from './vendor/logging'
 import database from './config/database'
 import morgan from 'morgan'
 import cookieParser from 'cookie-parser'
@@ -14,7 +14,7 @@ import routerV2 from './resources/v2/routers'
 import indexRouter from './routers'
 import user from './routers/user'
 import department from './routers/department'
-import apiversion from './core/apiversion'
+import apiversion from './vendor/apiversion'
 import fileUpload from 'express-fileupload'
 
 // const moduleURL = new URL(import.meta.url);
